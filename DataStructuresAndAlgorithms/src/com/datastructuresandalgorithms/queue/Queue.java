@@ -1,48 +1,40 @@
-package com.datastructuresandalgorithms.stack;
+package com.datastructuresandalgorithms.queue;
 
 import java.util.LinkedList;
 
-public class Stack<T> {
+public class Queue<T> {
     private LinkedList<T> container;
     private int size;
 
-    public Stack() {
+    public Queue() {
         this.container = new LinkedList<>();
         this.size = 0;
     }
 
     // O(1)
-    public void push(T element) {
+    public void enqueue(T element) {
         this.container.add(element);
         this.size++;
     }
 
     // O(1)
-    public T pop() {
+    public T dequeue() {
         if (isEmpty()) {
-            // empty;
             return null;
         }
         this.size--;
-        return this.container.removeLast();
+        return this.container.removeFirst();
     }
 
     // O(1)
     public T peek() {
         if (isEmpty()) {
-            // empty;
             return null;
         }
-        return this.container.getLast();
+        return this.container.getFirst();
     }
 
-    // O(1)
-    public int size() {
-        return this.size;
-    }
-
-    // O(1)
-    public boolean isEmpty() {
+    public boolean isEmpty(){
         return this.size == 0;
     }
 }
