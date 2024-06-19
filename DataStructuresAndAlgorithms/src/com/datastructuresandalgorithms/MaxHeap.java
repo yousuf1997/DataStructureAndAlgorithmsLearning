@@ -10,6 +10,7 @@ public class MaxHeap<T extends Comparable<T>> {
         container = new ArrayList<>();
     }
 
+    // Time Complexity = O(log n)
     public void add(T element) {
         container.add(element);
         if (container.size() == 1) {
@@ -19,6 +20,7 @@ public class MaxHeap<T extends Comparable<T>> {
         percolate(container.size() - 1, container);
     }
 
+    // Time Complexity = O(1)
     public T getMax() {
         if (container.size() == 0) return null;
         return container.get(0);
@@ -28,6 +30,7 @@ public class MaxHeap<T extends Comparable<T>> {
         return container.isEmpty();
     }
 
+    // Time Complexity - O(n log n)
     public void heapSort(List<T> elements) {
         // assume that the first element is the placeholder
         makeHeap(elements);
@@ -44,6 +47,7 @@ public class MaxHeap<T extends Comparable<T>> {
         }
     }
 
+    // Time Complexity = O(n)
     private void makeHeap(List<T> elements) {
         // assume that the first element is the placeholder
         int index = elements.size() / 2;
@@ -53,6 +57,7 @@ public class MaxHeap<T extends Comparable<T>> {
         }
     }
 
+    // Time Complexity = O(log n)
     public void removeMax() {
         if (container.size() == 0) {
             // nothing to remove;
@@ -65,6 +70,7 @@ public class MaxHeap<T extends Comparable<T>> {
         siftDown(0, container);
     }
 
+    // Time Complexity = O(log n)
     public void replace(T element, int position) {
         if(position >= container.size()) {
             return;
@@ -78,6 +84,7 @@ public class MaxHeap<T extends Comparable<T>> {
         }
     }
 
+    // Time Complexity = O(log n)
     /**
      * This method sifts up the value until it reaches the
      * heap property
@@ -100,6 +107,7 @@ public class MaxHeap<T extends Comparable<T>> {
     }
 
 
+    // Time Complexity = O(log n)
     /**
      * This method sifts down the value until it reaches the
      * heap property
